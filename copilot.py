@@ -1,4 +1,4 @@
-def repetedStrings(string_to_repeat,number_of_characters_to_consider):
+def repeatedStrings(string_to_repeat,number_of_characters_to_consider):
 
     """
     repeatedStrings (string_to_repeat: str, number_of_characters_to_consider: int) -> int:
@@ -34,7 +34,7 @@ def repetedStrings(string_to_repeat,number_of_characters_to_consider):
 
 if __name__ == '__main__':
     print("Starting tests")
-    assert repetedStrings("aba",10) == 7
+    assert repeatedStrings("aba",10) == 7
     print("Sucess 1/2")
-    assert repetedStrings("abcac",10) == 4
+    assert repeatedStrings("abcac",10) == 4
     print("Sucess 2/2")
