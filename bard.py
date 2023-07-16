@@ -1,42 +1,38 @@
-def repeatedStrings(string_to_repeat, number_of_characters_to_consider):
+def repeatedStrings(s, n):
 
-  """
-  repeatedStrings (string_to_repeat: str, number_of_characters_to_consider: int) -> int:
-  repeatedStrings ("aba", 10) -> 7
-  repeatedStrings ("abcac", 10) -> 4
+    """
+    repeatedStrings (string_to_repeat: str, number_of_characters_to_consider: int) -> int:
+    repeatedStrings ("aba", 10) -> 7
+    repeatedStrings ("abcac", 10) -> 4
 
-  Process
+    Process
 
-  Get the first letter
-  Create the new string
-  Count the numbers of strings into the new string
+    Get the first letter
+    Create the new string
+    Count the numbers of strings into the new string
 
-  Outputs
+    Outputs
 
-  first_letter = str
-  new_string = str
-  number_of_chars_in_string = int
+    first_letter = str
+    new_string = str
+    number_of_chars_in_string = int
 
-  Code
-  """
+    Code
+    """
 
-  first_letter = string_to_repeat[0]
-  new_string = first_letter
-  number_of_chars_in_string = 1
+    count_a = 0
+    length_s = len(s)
+    if length_s == 1:
+        return n
+    n_div_len, n_mod_len = divmod(n, length_s)
+    count_a += s.count('a') * n_div_len
+    count_a += s[n_mod_len - 1] == 'a'
+    return count_a
 
-  for i in range(len(string_to_repeat)):
-    if string_to_repeat[i] == first_letter:
-      number_of_chars_in_string += 1
-    else:
-      new_string += string_to_repeat[i]
-      first_letter = string_to_repeat[i]
-      number_of_chars_in_string = 1
-
-  return number_of_chars_in_string
 
 if __name__ == '__main__':
-  print("Starting tests")
-  assert repeatedStrings("aba",10) == 7
-  print("Sucess 1/2")
-  assert repeatedStrings("abcac",10) == 4
-  print("Sucess 2/2")
+    print("Starting tests")
+    assert repeatedStrings("aba",10) == 7
+    print("Sucess 1/2")
+    assert repeatedStrings("abcac",10) == 4
+    print("Sucess 2/2")
